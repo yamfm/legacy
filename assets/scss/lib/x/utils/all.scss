@@ -1,0 +1,106 @@
+// X Utility Classes
+// ~~~~~~~~~~~~~~~~~
+@import '../global/all';
+
+// Visibility
+.xu-is-hidden {
+  display: none !important;
+}
+
+//TODO:Deprecate
+@each $breakpoint in $breakpoints {
+  @include breakLessThan($breakpoint) {
+    .xu-is-hidden--#{$breakpoint} {
+      display: none !important;
+    }
+  }
+}
+
+@each $mq-key, $mq-value in $xg-mq-list {
+  @media #{$mq-value} {
+    .xu-hide-#{$mq-key} {
+      display: none !important;
+    }
+  }
+}
+
+@each $mq-key, $mq-value in $xg-mq-list-min {
+  @media #{$mq-value} {
+    .xu-hide-#{$mq-key}-min {
+      display: none !important;
+    }
+  }
+}
+
+// Spacing
+.xu-mt-0 {
+  margin-top: 0 !important;
+}
+.xu-mb-0 {
+  margin-bottom: 0 !important;
+}
+.xu-mx-auto {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.xu-clearfix::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.xt-right {
+  text-align: right !important;
+}
+
+// Alignment
+.xu-flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.xg-order-2 {
+  order: 2;
+}
+
+// Sizing
+.xu-width-auto {
+  width: auto !important;
+}
+// Text
+.xt-mono {
+  font-family: monospace !important;
+}
+.xt-special {
+  font-family: $x-custom-font--special;
+}
+.xt-center {
+  text-align: center !important;
+}
+.xt-td-none {
+  text-decoration: none !important;
+}
+.xt-fw-100 {
+  font-weight: 100 !important;
+}
+.xt-fw-300 {
+  font-weight: 300 !important;
+}
+.xt-fw-400 {
+  font-weight: 400 !important;
+}
+.xt-fw-600 {
+  font-weight: 600 !important;
+}
+.xt-fs-14 {
+  font-size: 14px !important;
+}
+.xt-fs-18 {
+  font-size: 18px !important;
+}
+.xt-fs-22 {
+  font-size: 22px !important;
+}
+.xt-fs-28 {
+  font-size: 28px !important;
+  line-height: 38px !important;
+}

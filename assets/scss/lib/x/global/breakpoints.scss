@@ -1,0 +1,62 @@
+// X Breakpoints
+// ~~~~~~~~~~~~~
+
+$x-bp-desktop-large: 106em !default;
+$x-bp-desktop: 80em !default;
+$x-bp-desktop-small: 64em !default;
+$x-bp-tablet-large: 58em !default;
+$x-bp-tablet: 48em !default;
+$x-bp-tablet-small: 46em !default;
+$x-bp-phablet: 40em !default;
+$x-bp-mobile-large: 35.5em !default;
+$x-bp-mobile: 30em !default;
+$x-bp-mobile-small: 20em !default;
+
+// Breakpoint Key / Values
+$breakpoints: (
+  mobile,
+  mobile-large,
+  phablet,
+  tablet-small,
+  tablet,
+  tablet-large,
+  desktop-small,
+  desktop,
+  desktop-large,
+);
+
+$breakpointsMap: (
+  mobile-small: $x-bp-mobile-small,
+  mobile: $x-bp-mobile,
+  mobile-large: $x-bp-mobile-large,
+  phablet: $x-bp-phablet,
+  tablet-small: $x-bp-tablet-small,
+  tablet: $x-bp-tablet,
+  tablet-large: $x-bp-tablet-large,
+  desktop-small: $x-bp-desktop-small,
+  desktop: $x-bp-desktop,
+  desktop-large: $x-bp-desktop-large,
+);
+
+@function findInMap($key, $map) {
+  @if map-has-key($map, $key) {
+    @return map-get($map, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $map.";
+  @return null;
+}
+
+@mixin breakLessThan($name) {
+  $breakWidth: findInMap($name, $breakpointsMap);
+  @media (max-width: $breakWidth) {
+     @content;
+  }
+}
+
+@mixin breakGreaterThan($name) {
+  $breakWidth: findInMap($name, $breakpointsMap);
+  @media (min-width: $breakWidth + 0.0625em) {
+     @content;
+  }
+}

@@ -1,0 +1,19 @@
+// X Ground
+// ~~~~~~~~
+
+@import '../global/all';
+
+.x-ground {
+  min-height: 600px;
+  padding: 5% 0;
+  &--dark {
+    background: linear-gradient(#151819, #0c0e0f);
+    color: #fff;
+    p {
+      color: #cdd3d6;
+    }
+  }
+  &--light {
+    background: #fff;
+  }
+}

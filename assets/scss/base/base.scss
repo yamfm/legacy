@@ -1,0 +1,29 @@
+// bases
+html {
+  font-size: 16px;
+  @include breakLessThan('tablet-large') {
+    font-size: 14px;
+  }
+}
+
+p {
+  @include font-size(16);
+  font-weight: 100;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #FFFFFF;
+  transition: background-color .2s;
+}
+
+img, video {
+  width: 100%;
+}
+
+h1, h2, h3, h4, h5 {
+  width: 100%;
+}

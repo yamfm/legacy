@@ -1,0 +1,51 @@
+// X Masthead
+// ~~~~~~~~~~
+
+@import '../global/all';
+
+.x-masthead {
+  background-color: $x-masthead-background-color;
+  min-height: $x-masthead-min-height;
+  padding: 5% 0;
+  position: relative;
+  z-index: $x-masthead-z-index;
+  &--dark {
+    background-color: $x-masthead-background-color--dark;
+    color: #fff;
+  }
+  &--tall {
+    min-height: $x-masthead-min-height--tall;
+    @include breakLessThan('tablet-large') {
+      min-height: $x-masthead-min-height--tall-mobile;
+    }
+    @include breakGreaterThan('desktop-large') {
+      min-height: 0;
+      height: $x-masthead-min-height--wide;
+    }
+  }
+  &--with-image {
+    background-size: 100%;
+  }
+  &--with-video {
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0;
+    video,
+    .x-masthead-video-fallback {
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      min-width: 100%;
+      z-index: 1;
+      @include breakGreaterThan('desktop-large') {
+        height: 120%;
+      }
+    }
+    .x-masthead-video-fallback {
+      right: 0;
+      width: 100%;
+      z-index: 0;
+    }
+  }
+}

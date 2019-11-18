@@ -1,0 +1,49 @@
+// X Form Globals
+// ~~~~~~~~~~~~~~
+$x-field-margin-bottom: 2.5% !default;
+
+// Input Fields
+$x-input-background: #fff !default;
+$x-input-border-color: #ddd !default;
+$x-input-border-color--focused: #ccc !default;
+$x-input-border-radius: 8px !default;
+$x-input-border-width: 1px !default;
+$x-input-font-size: 12 !default;
+$x-input-font-size--large: 22 !default;
+$x-input-font-size--large-mobile: 18 !default;
+$x-input-radius: 100px !default;
+$x-input-height: 42px !default;
+$x-input-height--mobile-large: 32px !default;
+$x-input-height--medium: 50px !default;
+$x-input-height--large: 70px !default;
+$x-input-height--large-mobile: 55px !default;
+$x-input-height--jumbo: 63px !default;
+$x-input-placeholder-color: #ccc !default;
+$x-input-padding-x: 13px !default;
+$x-textarea-min-height: 110px !default;
+$x-textarea-padding: 15px !default;
+
+// Buttons
+$x-button-background: $x-grey-button !default;
+$x-button-background--blue: $x-blue-real !default;
+$x-button-background--green: $x-green-button !default;
+$x-button-background--red: $x-red-button !default;
+$x-button-border-color: transparent !default;
+$x-button-border-color--outline-dark: #d8dcdf !default;
+$x-button-border-color--outline-dark-hover: #78878e !default;
+$x-button-border-color--outline-white: #fff !default;
+$x-button-border-color--outline-white-hover: #fff !default;
+$x-button-border-width: 1px !default;
+$x-button-border-width--outline: 2px !default;
+$x-button-font-family: monospace !default;
+$x-button-font-size: 14 !default;
+$x-button-font-size--medium: 18 !default;
+$x-button-font-size--large: 22 !default;
+$x-button-font-size--large-mobile: 18 !default;
+$x-button-text-color: #fff !default;
+$x-button-text-color--outline-dark: #78878e !default;
+$x-button-text-color--outline-dark-hover: #545d64 !default;
+$x-button-text-color--outline-white: #fff !default;
+$x-button-text-color--outline-white-hover: #fff !default;
+$x-button-text-color--white: $x-grey-text-light !default;
+$x-button-text-transform: none !default;

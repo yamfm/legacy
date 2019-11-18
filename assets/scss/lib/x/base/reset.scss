@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+  @include line-height(1);
+}
+
+html {
+  font-family: $x-custom-font, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-y: scroll;
+}
+
+img { max-width: 100%; }
+
+hr {
+  background: $x-hr-background-color;
+  margin: $x-hr-margin-y 0;
+}

@@ -1,0 +1,191 @@
+// X Grid Mixins and Variables
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+$xg-gridName: x-grid !default;
+$xg-colName: x-col !default;
+$xg-attributeName: class !default;
+$xg-gutter: 0rem !default; // Total left + right
+$xg-gutter-vertical: 1rem !default;
+
+$xg-mq-list: (
+  lg: "screen and (max-width: 80em)", // max 1280px
+  md: "screen and (max-width: 64em)", // max 1024px
+  sm: "screen and (max-width: 48em)", // max 768px
+  xs: "screen and (max-width: 35.5em)" // up to 568px
+) !default;
+
+$xg-mq-list-min: (
+  lg: "screen and (min-width: 80em)", // min 1280px
+  md: "screen and (min-width: 64em)", // min 1024px
+  sm: "screen and (min-width: 48em)", // min 768px
+  xs: "screen and (min-width: 35.5em)" // up to 568px
+) !default;
+
+$xgp_col-1: (100%/12);
+$xgp_col-2: ($xgp_col-1*2);
+$xgp_col-3: ($xgp_col-1*3);
+$xgp_col-4: ($xgp_col-1*4);
+$xgp_col-5: ($xgp_col-1*5);
+$xgp_col-6: ($xgp_col-1*6);
+$xgp_col-7: ($xgp_col-1*7);
+$xgp_col-8: ($xgp_col-1*8);
+$xgp_col-9: ($xgp_col-1*9);
+$xgp_col-10: ($xgp_col-1*10);
+$xgp_col-11: ($xgp_col-1*11);
+$xgp_col-12: 100%;
+
+$xgp_col-5-12: (100%/5);
+$xgp_col-7-12: (100%/7);
+$xgp_col-8-12: (100%/8);
+$xgp_col-9-12: (100%/9);
+$xgp_col-10-12: (100%/10);
+$xgp_col-11-12: (100%/11);
+
+// Function to generate the grid by number
+@mixin makeGridByNumber($grid)
+{
+  [class*="#{$grid}"] > [class~="#{$xg-colName}"],
+  [class*="#{$grid}-1"] > [class*="#{$xg-colName}-"],
+  [class*="#{$grid}-1"] > [class*="#{$xg-colName}_"] {
+    flex-basis: $xgp_col-12;
+    max-width: $xgp_col-12;
+  }
+
+  [class*="#{$grid}"] > [class~="#{$xg-colName}"],
+  [class*="#{$grid}-2"] > [class*="#{$xg-colName}-"],
+  [class*="#{$grid}-2"] > [class*="#{$xg-colName}_"] {
+    flex-basis: $xgp_col-6;
+    max-width: $xgp_col-6;
+  }
+
+  [class*="#{$grid}"] > [class~="#{$xg-colName}"],
+  [class*="#{$grid}-3"] > [class*="#{$xg-colName}-"],
+  [class*="#{$grid}-3"] > [class*="#{$xg-colName}_"] {
+    flex-basis: $xgp_col-4;
+    max-width: $xgp_col-4;
+  }
+
+  [class*="#{$grid}"] > [class~="#{$xg-colName}"],
+  [class*="#{$grid}-4"] > [class*="#{$xg-colName}-"],
+  [class*="#{$grid}-4"] > [class*="#{$xg-colName}_"] {
+    flex-basis: $xgp_col-3;
+    max-width: $xgp_col-3;
+  }
+  [class*="#{$grid}"] > [class~="#{$xg-colName}"],
+  [class*="#{$grid}-5"] > [class*="#{$xg-colName}-"],
+  [class*="#{$grid}-5"] > [class*="#{$xg-colName}_"] {
+    flex-basis: $xgp_col-5-12;
+    max-width: $xgp_col-5-12;
+  }
+  [class*="#{$grid}"] > [class~="#{$xg-colName}"],
+  [class*="#{$grid}-6"] > [class*="#{$xg-colName}-"],
+  [class*="#{$grid}-6"] > [class*="#{$xg-colName}_"] {
+    flex-basis: $xgp_col-2;
+    max-width: $xgp_col-2;
+  }
+  [class*="#{$grid}"] > [class~="#{$xg-colName}"],
+  [class*="#{$grid}-7"] > [class*="#{$xg-colName}-"],
+  [class*="#{$grid}-7"] > [class*="#{$xg-colName}_"] {
+    flex-basis: $xgp_col-7-12;
+    max-width: $xgp_col-7-12;
+  }
+  [class*="#{$grid}"] > [class~="#{$xg-colName}"],
+  [class*="#{$grid}-8"] > [class*="#{$xg-colName}-"],
+  [class*="#{$grid}-8"] > [class*="#{$xg-colName}_"] {
+    flex-basis: $xgp_col-8-12;
+    max-width: $xgp_col-8-12;
+  }
+  [class*="#{$grid}"] > [class~="#{$xg-colName}"],
+  [class*="#{$grid}-9"] > [class*="#{$xg-colName}-"],
+  [class*="#{$grid}-9"] > [class*="#{$xg-colName}_"] {
+    flex-basis: $xgp_col-9-12;
+    max-width: $xgp_col-9-12;
+  }
+  [class*="#{$grid}"] > [class~="#{$xg-colName}"],
+  [class*="#{$grid}-10"] > [class*="#{$xg-colName}-"],
+  [class*="#{$grid}-10"] > [class*="#{$xg-colName}_"] {
+    flex-basis: $xgp_col-10-12;
+    max-width: $xgp_col-10-12;
+  }
+  [class*="#{$grid}"] > [class~="#{$xg-colName}"],
+  [class*="#{$grid}-11"] > [class*="#{$xg-colName}-"] {
+    flex-basis: $xgp_col-11-12;
+    max-width: $xgp_col-11-12;
+  }
+  [class*="#{$grid}"] > [class~="#{$xg-colName}"],
+  [class*="#{$grid}-12"] > [class*="#{$xg-colName}-"],
+  [class*="#{$grid}-12"] > [class*="#{$xg-colName}_"] {
+    flex-basis: $xgp_col-1;
+    max-width: $xgp_col-1;
+  }
+}
+
+// Function to generate the grid by columns
+@mixin makeCol($col)
+{
+  [class~="x-grid"],
+  [class*="x-grid-"],
+  [class*="x-grid_"] {
+    > [class*="#{$col}-1"] { flex-basis: $xgp_col-1; max-width: $xgp_col-1; }
+    > [class*="#{$col}-2"] { flex-basis: $xgp_col-2; max-width: $xgp_col-2;  }
+    > [class*="#{$col}-3"] { flex-basis: $xgp_col-3; max-width: $xgp_col-3;  }
+    > [class*="#{$col}-4"] { flex-basis: $xgp_col-4; max-width: $xgp_col-4; }
+    > [class*="#{$col}-5"] { flex-basis: $xgp_col-5; max-width: $xgp_col-5; }
+    > [class*="#{$col}-6"] { flex-basis: $xgp_col-6; max-width: $xgp_col-6; }
+    > [class*="#{$col}-7"] { flex-basis: $xgp_col-7; max-width: $xgp_col-7; }
+    > [class*="#{$col}-8"] { flex-basis: $xgp_col-8; max-width: $xgp_col-8; }
+    > [class*="#{$col}-9"] { flex-basis: $xgp_col-9; max-width: $xgp_col-9; }
+    > [class*="#{$col}-10"] { flex-basis: $xgp_col-10; max-width: $xgp_col-10; }
+    > [class*="#{$col}-11"] { flex-basis: $xgp_col-11; max-width: $xgp_col-11; }
+    > [class*="#{$col}-12"] { flex-basis: $xgp_col-12; max-width: $xgp_col-12; }
+  }
+}
+
+// Function to generate the -first & -last base on mq keys (as _xg-first)
+@mixin makeFirstLast($mq)
+{
+  [class~="x-grid"],
+  [class*="x-grid-"],
+  [class*="x-grid_"] {
+    [class*="#{$mq}-first"]{
+      order: -1;
+    }
+    [class*="#{$mq}-last"]{
+      order: 1;
+    }
+  }
+}
+
+// Function to generate the offset
+@mixin makeOff($off)
+{
+  [class~="x-grid"],
+  [class*="x-grid-"],
+  [class*="x-grid_"] {
+    > [data-push-left*="#{$off}-0"]{ margin-left: 0; }
+    > [data-push-left*="#{$off}-1"]{ margin-left: $xgp_col-1; }
+    > [data-push-left*="#{$off}-2"]{ margin-left: $xgp_col-2; }
+    > [data-push-left*="#{$off}-3"]{ margin-left: $xgp_col-3; }
+    > [data-push-left*="#{$off}-4"]{ margin-left: $xgp_col-4; }
+    > [data-push-left*="#{$off}-5"]{ margin-left: $xgp_col-5; }
+    > [data-push-left*="#{$off}-6"]{ margin-left: $xgp_col-6; }
+    > [data-push-left*="#{$off}-7"]{ margin-left: $xgp_col-7; }
+    > [data-push-left*="#{$off}-8"]{ margin-left: $xgp_col-8; }
+    > [data-push-left*="#{$off}-9"]{ margin-left: $xgp_col-9; }
+    > [data-push-left*="#{$off}-10"]{ margin-left: $xgp_col-10; }
+    > [data-push-left*="#{$off}-11"]{ margin-left: $xgp_col-11; }
+
+    > [data-push-right*="#{$off}-0"]{ margin-right: 0; }
+    > [data-push-right*="#{$off}-1"]{ margin-right: $xgp_col-1; }
+    > [data-push-right*="#{$off}-2"]{ margin-right: $xgp_col-2; }
+    > [data-push-right*="#{$off}-3"]{ margin-right: $xgp_col-3; }
+    > [data-push-right*="#{$off}-4"]{ margin-right: $xgp_col-4; }
+    > [data-push-right*="#{$off}-5"]{ margin-right: $xgp_col-5; }
+    > [data-push-right*="#{$off}-6"]{ margin-right: $xgp_col-6; }
+    > [data-push-right*="#{$off}-7"]{ margin-right: $xgp_col-7; }
+    > [data-push-right*="#{$off}-8"]{ margin-right: $xgp_col-8; }
+    > [data-push-right*="#{$off}-9"]{ margin-right: $xgp_col-9; }
+    > [data-push-right*="#{$off}-10"]{ margin-right: $xgp_col-10; }
+    > [data-push-right*="#{$off}-11"]{ margin-right: $xgp_col-11; }
+  }
+}

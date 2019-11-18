@@ -1,0 +1,20 @@
+// X Container
+// ~~~~~~~~~~~
+
+@import '../global/all';
+
+.x-container {
+  margin: 0 auto;
+  max-width: $x-container--wide;
+  padding: 0 2.5%;
+  width: 100%;
+  &--flex {
+    display: flex;
+    width: 100%;
+  }
+  &:not(.x-container--thin-mobile) {
+    @include breakLessThan('tablet') {
+      padding: 0 8%;
+    }
+  }
+}

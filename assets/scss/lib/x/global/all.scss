@@ -1,0 +1,43 @@
+// X Globals
+// ~~~~~~~~~
+
+@import 'colors';
+@import 'grid';
+@import 'breakpoints';
+@import 'forms';
+@import 'type';
+@import 'mixins';
+// @import '../../../../../node_modules/font-awesome/scss/variables';
+
+// Bases
+$x-selection-background-color: purple !default;
+$x-selection-color: #fff !default;
+$x-container--wide: 1240px !default;
+$x-hr-margin-y: 18px !default;
+$x-hr-background-color: rgba(255, 255, 255, .1);
+
+// Headers
+$x-header-height: 80px !default;
+$x-header-font-size: 18 !default;
+$x-header-font-size--mobile: 14 !default;
+$x-header-logo-height: 34px !default;
+$x-header-logo-height--mobile: 32px !default;
+$x-header-logo-margin: 21px !default;
+$x-header-logo-margin--mobile: 13px !default;
+$x-header-dark-background-color: $x-grey-dark-base !default;
+$x-header-dark-color: #fff !default;
+$x-header-dark-shadow-color: rgba(0, 0, 0, .5) !default;
+$x-header-light-background-color: #FFFFFF !default;
+$x-header-light-color: $x-grey-dark-base !default;
+$x-header-light-shadow-color: rgba(0, 0, 0, .1) !default;
+$x-header-nav-anchor-margin: 26px !default;
+$x-header-z-index: 10 !default;
+
+// Mastheads
+$x-masthead-background-color: $x-grey-light !default;
+$x-masthead-background-color--dark: #1e2224 !default;
+$x-masthead-min-height: 420px !default;
+$x-masthead-min-height--tall: 675px !default;
+$x-masthead-min-height--tall-mobile: 675px !default;
+$x-masthead-min-height--wide: 72vh !default;
+$x-masthead-z-index: inherit !default;

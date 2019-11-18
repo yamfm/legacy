@@ -1,0 +1,59 @@
+// X Header
+// ~~~~~~~~
+
+@import '../global/all';
+
+.x-header {
+  align-items: center;
+  display: flex;
+  height: $x-header-height;
+  &-logo {
+    align-items: center;
+    display: flex;
+    @include font-size($x-header-font-size);
+    img,
+    svg {
+      height: $x-header-logo-height;
+      margin-right: $x-header-logo-margin;
+    }
+  }
+  &-navigation {
+    align-items: center;
+    display: flex;
+    margin-left: auto;
+    a {
+      color: inherit;
+      text-decoration: none;
+      margin-right: $x-header-nav-anchor-margin;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &--dark {
+    background: $x-header-dark-background-color;
+    box-shadow: $x-header-dark-shadow-color 0 2px 4px 0;
+    color: $x-header-dark-color;
+  }
+  &--light {
+    background: $x-header-light-background-color;
+    box-shadow: $x-header-light-shadow-color 0 2px 4px 0;
+    color: $x-header-light-color;
+  }
+  &--fixed,
+  &--absolute {
+    top: 0;
+    width: 100%;
+    z-index: $x-header-z-index;
+  }
+  &--fixed {
+    position: fixed;
+  }
+  &--absolute {
+    position: absolute;
+  }
+}
+
+.x-has-fixed-header {
+  padding-top: $x-header-height;
+}

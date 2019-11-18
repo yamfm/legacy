@@ -1,0 +1,9 @@
+// X Base
+// ~~~~~~
+@import 'reset';
+@import 'type';
+
+::selection {
+  background: $x-selection-background-color;
+  color: $x-selection-color;
+}

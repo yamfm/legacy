@@ -1,0 +1,151 @@
+/*
+
+  X Typos
+  ~~~~~~~
+
+  Typography defaults extending the Gutenberg library
+  https://github.com/matejlatin/Gutenberg
+
+*/
+
+br {
+  margin-bottom: 0;
+}
+
+abbr {
+  letter-spacing: 0.1em;
+}
+
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+dfn {
+  font-style: italic;
+}
+
+em,
+i {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+mark {
+  background: #ff0;
+  color: #000;
+}
+
+small {
+  @include line-height(.5);
+  font-size: 70%;
+  @media screen and (min-width: #{ $x-max-width + 5 + 'em'}) {
+    $x-leading: $x-leading-desktop;
+    $x-leading-rem: $x-leading-rem-desktop;
+    @include line-height(.5);
+  }
+
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  bottom: -0.25em;
+  top: -0.5em;
+}
+
+// Headings Options
+// [ h1: size (in px), line height (* leading), margin top (* leading), margin bottom (* leading) ]
+$x-headings: (
+  h1: (40, 2, 4, 1),
+  h2: (27, 1.5, 2.5, .5),
+  h3: (22, 1.25, 2, .5),
+  h4: (19, 1, 1.5, .5),
+  h5: (16, 1, 2.5, .5),
+  h6: (16, 1, 2.5, .5)
+) !default;
+
+// Set headings sizes, line-heights and margins
+@each $x-heading, $x-properties in $x-headings {
+  #{$x-heading} {
+    @include font-size(nth($x-properties, 1));
+    @include line-height(nth($x-properties, 2));
+    @include margin-top(nth($x-properties, 3));
+    @include margin-bottom(nth($x-properties, 4));
+  }
+}
+
+@media screen and (min-width: #{ $x-max-width + 5 + 'em'}) {
+  $x-leading: $x-leading-desktop;
+  $x-leading-rem: $x-leading-rem-desktop;
+  @each $x-heading, $x-properties in $x-headings {
+    #{$x-heading} {
+      @include font-size(nth($x-properties, 1));
+      @include line-height(nth($x-properties, 2));
+      @include margin-top(nth($x-properties, 3));
+      @include margin-bottom(nth($x-properties, 4));
+    }
+  }
+}
+
+// Set margins between headings
+h1 + h2 {
+  @include margin-top(1);
+  @media screen and (min-width: #{ $x-max-width + 5 + 'em'}) {
+    $x-leading: $x-leading-desktop;
+    $x-leading-rem: $x-leading-rem-desktop;
+    @include margin-top(1);
+  }
+}
+
+h2 + h3,
+h3 + h4,
+h4 + h5 {
+  @include margin-top(.5);
+  @media screen and (min-width: #{ $x-max-width + 5 + 'em'}) {
+    $x-leading: $x-leading-desktop;
+    $x-leading-rem: $x-leading-rem-desktop;
+    @include margin-top(.5);
+  }
+}
+
+h5 + h6 {
+  @include margin-top(-.5);
+  @media screen and (min-width: #{ $x-max-width + 5 + 'em'}) {
+    $x-leading: $x-leading-desktop;
+    $x-leading-rem: $x-leading-rem-desktop;
+    @include margin-top(-.5);
+  }
+}
+
+h6 {
+  font-style: italic;
+  font-weight: normal;
+}
+
+// Change headings font if a heading font is set
+@if $x-font-headings != null {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $x-font-headings;
+  }
+}
+
+hgroup {
+  display: block;
+}

@@ -1,0 +1,45 @@
+// Font-size
+@mixin font-size($number) {
+  font-size: #{ $number / $x-base + 'rem'};
+}
+
+// Line-height
+@mixin line-height($number) {
+  line-height: #{ $number * $x-leading-rem + 'rem'};
+}
+
+// Margin-top
+@mixin margin-top($number) {
+  margin-top: #{ $number * $x-leading-rem + 'rem'};
+}
+
+// Margin-bottom
+@mixin margin-bottom($number) {
+  margin-bottom: #{ $number * $x-leading-rem + 'rem'};
+}
+
+// Margin
+@mixin margin($top, $right, $bottom:null, $left:null) {
+  @if $left == null and $bottom == null {
+    margin: #{ $top * $x-leading-rem + 'rem'} #{ $right * $x-leading-rem + 'rem'};
+  } @else if $left == null or $left == $right {
+    margin: #{ $top * $x-leading-rem + 'rem'} #{ $right * $x-leading-rem + 'rem'} #{ $bottom * $x-leading-rem + 'rem'};
+  } @else {
+    margin: #{ $top * $x-leading-rem + 'rem'} #{ $right * $x-leading-rem + 'rem'} #{ $bottom * $x-leading-rem + 'rem'} #{ $left * $x-leading-rem + 'rem'};
+  }
+}
+
+// Padding
+@mixin padding($top, $right, $bottom:null, $left:null) {
+  @if $left == null and $bottom == null {
+    padding: #{ $top * $x-leading-rem + 'rem'} #{ $right * $x-leading-rem + 'rem'};
+  } @else if $left == null or $left == $right {
+    padding: #{ $top * $x-leading-rem + 'rem'} #{ $right * $x-leading-rem + 'rem'} #{ $bottom * $x-leading-rem + 'rem'};
+  } @else {
+    padding: #{ $top * $x-leading-rem + 'rem'} #{ $right * $x-leading-rem + 'rem'} #{ $bottom * $x-leading-rem + 'rem'} #{ $left * $x-leading-rem + 'rem'};
+  }
+}
+
+@mixin padding-equal($number) {
+  padding: #{ $number * $x-leading-rem + 'rem'};
+}

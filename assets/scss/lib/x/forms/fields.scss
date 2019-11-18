@@ -1,0 +1,201 @@
+// X Fields
+// ~~~~~~~~
+
+@import '../global/all';
+
+.x-form {
+  @include padding(0.5, 0, 0);
+  &.x-form--small {
+    label {
+      @include font-size(1.2);
+    }
+  }
+}
+
+.x-field {
+  margin-bottom: $x-field-margin-bottom;
+  &-select {
+    position: relative;
+    select {
+      background: $x-grey-filter;
+      color: $x-grey-text-lighter;
+      cursor: pointer;
+      @include font-size($x-input-font-size);
+      font-weight: 600;
+      -webkit-appearance: none;
+    }
+    &:after {
+      color: $x-grey-text-lighter;
+      content: $fa-var-chevron-down;
+      display: block;
+      font-family: 'FontAwesome';
+      @include font-size($x-input-font-size);
+      position: absolute;
+      pointer-events: none;
+      line-height: $x-input-height;
+      right: $x-input-padding-x;
+    }
+  }
+  label {
+    cursor: pointer;
+    display: block;
+    font-weight: 500;
+    @include padding(0, 0, 0.25);
+  }
+  &-errors {
+    @include font-size(14px);
+    font-weight: 500;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: $x-red-button;
+  }
+}
+
+// Text Inputs
+// ~~~~~~~~~~~
+input[type='text'],
+input[type='number'],
+input[type='email'],
+textarea,
+select {
+  background: $x-input-background;
+  border: $x-input-border-width solid $x-input-border-color;
+  border-radius: $x-input-border-radius;
+  font-family: $x-custom-font, sans-serif;
+  @include font-size($x-input-font-size);
+  min-height: $x-input-height;
+  outline: none;
+  padding: 0 $x-input-padding-x;
+  transition-duration: .1s;
+  width: 100%;
+  &:focus {
+    border-color: $x-input-border-color--focused;
+  }
+  &::placeholder {
+    color: $x-input-placeholder-color;
+  }
+  &.x-field--transparent {
+    background: transparent;
+    color: inherit;
+  }
+  &.x-field--large {
+    height: $x-input-height--large;
+    font-size: $x-input-font-size--large;
+    padding: 0 5%;
+    @include breakLessThan('tablet-large') {
+      @include font-size($x-input-font-size--large-mobile);
+      height: $x-input-height--large-mobile;
+    }
+  }
+}
+
+textarea {
+  border-radius: $x-input-border-radius;
+  min-height: $x-textarea-min-height;
+  padding: $x-textarea-padding;
+}
+
+// Button Inputs
+// ~~~~~~~~~~~~~
+button,
+input[type='button'],
+input[type='submit'],
+.x-button {
+  align-items: center;
+  background: $x-button-background;
+  border: $x-button-border-width solid $x-button-border-color;
+  border-radius: $x-input-radius;
+  color: $x-button-text-color;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  font-family: $x-button-font-family;
+  font-weight: 600;
+  height: $x-input-height;
+  outline: none;
+  text-decoration: none;
+  transition-duration: .2s;
+  text-transform: $x-button-text-transform;
+  width: 100%;
+  i {
+    padding: 0 8px;
+  }
+  img {
+    margin-right: 26px;
+    max-height: 50%;
+  }
+  @include breakLessThan('mobile-large') {
+    height: $x-input-height--mobile-large;
+  }
+  &.x-button--padded {
+    padding: 0 18px;
+  }
+  &.x-button--padded-large {
+    padding: 0 26px;
+  }
+  &.x-button--standard {
+    @include font-size($x-button-font-size);
+    padding: 0 18px;
+    width: auto;
+  }
+  &.x-button--medium {
+    @include font-size($x-button-font-size--medium);
+    height: $x-input-height--medium;
+  }
+  &.x-button--large {
+    @include font-size($x-button-font-size--large);
+    height: $x-input-height--large;
+    @include breakLessThan('tablet-large') {
+      @include font-size($x-button-font-size--large-mobile);
+      height: $x-input-height--large-mobile;
+    }
+  }
+  &.x-button--transparent {
+    background: transparent;
+    border-color: transparent;
+    color: inherit;
+  }
+  &.x-button--disabled {
+    opacity: 0.3;
+  }
+  &.x-button--outline-dark {
+    background: transparent;
+    border-width: $x-button-border-width--outline;
+    border-color: $x-button-border-color--outline-dark;
+    color: $x-button-text-color--outline-dark;
+    &:hover {
+      border-color: $x-button-border-color--outline-dark-hover;
+      color: $x-button-text-color--outline-dark-hover;
+    }
+  }
+  &.x-button--outline-white {
+    background: transparent;
+    border-color: $x-button-border-color--outline-white;
+    color: $x-button-text-color--outline-white;
+    border-width: $x-button-border-width--outline;
+    &:hover {
+      border-color: $x-button-border-color--outline-white-hover;
+      color: $x-button-text-color--outline-white-hover;
+    }
+  }
+  &.x-button--white {
+    background: #fff;
+    border-color: rgba(0,0,0,.1);
+    color: $x-button-text-color--white;
+    &:hover {
+      border-color: rgba(0,0,0,.2);
+    }
+  }
+  &.x-button--blue {
+    background: $x-button-background--blue;
+  }
+  &.x-button--green {
+    background: $x-button-background--green;
+  }
+  &.x-button--loading {
+      cursor: default;
+      opacity: .9;
+      pointer-events: none;
+  }
+}
