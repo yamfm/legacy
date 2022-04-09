@@ -19,7 +19,7 @@
     "@nuxtjs/pwa": "^3.0.0-0",
     "firebase": "^7.4.0",
     "font-awesome": "^4.7.0",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "nuxt": "^2.0.0"
   },
   "devDependencies": {
